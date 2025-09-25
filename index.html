@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPoint</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div id="points-counter">Points: 0</div>
+        <h1 id="app-title">StudyPoint</h1>
+        <div id="theme-menu">
+            <select id="theme-select">
+                <option value="light">☀️ Clair</option>
+                <option value="dark">🌙 Sombre</option>
+            </select>
+            <select id="color-select">
+                <option value="green">🟢 Vert</option>
+                <option value="blue">🔵 Bleu</option>
+                <option value="orange">🟠 Orange</option>
+            </select>
+        </div>
+    </header>
+    <div class="container">
+        <nav id="sidebar">
+            <button class="nav-btn" data-page="planning">Planning</button>
+            <button class="nav-btn" data-page="revisions">Révisions</button>
+            <button class="nav-btn" data-page="timer">Timer</button>
+        </nav>
+        <main id="main-content">
+            <section id="planning" class="page">
+                <h2>Planning</h2>
+                <iframe src="https://calendar.google.com" width="100%" height="600"></iframe>
+            </section>
+            <section id="revisions" class="page">
+                <h2>Révisions</h2>
+                <button id="add-note">+ Ajouter une fiche</button>
+                <div id="notes-container"></div>
+            </section>
+            <section id="timer" class="page">
+                <h2>Timer / Chronomètre</h2>
+                <div id="timer-section">
+                    <h3>Timer Décompte</h3>
+                    <div id="preset-btns">
+                        <button data-time="5">5 min</button>
+                        <button data-time="15">15 min</button>
+                        <button data-time="25">25 min</button>
+                        <button data-time="30">30 min</button>
+                        <button data-time="60">60 min</button>
+                    </div>
+                    <div id="timer-display">00:00:00</div>
+                    <div class="controls">
+                        <button id="start-timer">Start</button>
+                        <button id="pause-timer">Pause</button>
+                        <button id="stop-timer">Stop</button>
+                    </div>
+                </div>
+                <div id="chrono-section">
+                    <h3>Chronomètre Libre</h3>
+                    <div id="chrono-display">00:00:00</div>
+                    <div class="controls">
+                        <button id="start-chrono">Start</button>
+                        <button id="pause-chrono">Pause</button>
+                        <button id="stop-chrono">Stop</button>
+                        <button id="reset-chrono">Reset</button>
+                    </div>
+                </div>
+                <div id="stats">
+                    <p>Temps total: <span id="daily-time">0</span> min</p>
+                    <p>Sessions complétées: <span id="sessions-completed">0</span></p>
+                    <p>Points gagnés: <span id="points-earned">0</span></p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
