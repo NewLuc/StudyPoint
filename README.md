@@ -9,4 +9,6 @@ StudyPoint – Installation
 7. Va à la ligne 400
 8. Remplace le texte "Enter your link (Google)" par ton lien
 9. Enregistre
-10. Ouvre le fichier avec Chrome
+10. Ouvre le fichier avec Chromr
+
+11. invalde read me
