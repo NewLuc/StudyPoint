@@ -1,0 +1,26 @@
+/* Blue Color Theme */
+.color-blue {
+    --primary-color: #2196F3;
+    --primary-hover: #1976D2;
+    --primary-light: rgba(33, 150, 243, 0.1);
+    --accent-color: #4CAF50;
+    --accent-hover: #45a049;
+}
+
+/* Orange Color Theme */
+.color-orange {
+    --primary-color: #FF9800;
+    --primary-hover: #F57C00;
+    --primary-light: rgba(255, 152, 0, 0.1);
+    --accent-color: #2196F3;
+    --accent-hover: #1976D2;
+}
+
+/* Purple Color Theme */
+.color-purple {
+    --primary-color: #9C27B0;
+    --primary-hover: #7B1FA2;
+    --primary-light: rgba(156, 39, 176, 0.1);
+    --accent-color: #FF5722;
+    --accent-hover: #E64A19;
+}

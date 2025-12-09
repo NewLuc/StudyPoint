@@ -1,0 +1,117 @@
+/* ==========================================
+   LEVELS & STATISTICS
+   ========================================== */
+
+#stats-display {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    animation: fadeInRight 0.6s ease-out;
+}
+
+.level-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.level-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#points-counter, #level-display {
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: transform var(--transition-fast), color var(--transition-fast);
+    position: relative;
+    z-index: 1;
+    text-shadow: none;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    backdrop-filter: none;
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+#points-counter:hover, #level-display:hover {
+    transform: scale(1.05);
+}
+
+.level-progress {
+    width: 200px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.9;
+}
+
+.progress-text {
+    position: relative;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    white-space: nowrap;
+}
+
+/* Level colors */
+/* Couleurs adaptatives selon le thème et le fond */
+.level-1 { color: var(--primary-color); }
+.level-2 { color: #E91E63; } /* Rose au lieu de bleu */
+.level-3 { color: #9C27B0; } /* Violet au lieu d'orange */
+.level-4 { color: #FF5722; } /* Orange vif au lieu de bleu */
+.level-5 { color: #b02727; }
+.level-6 { color: #2196F3; } /* Bleu au lieu d'orange */
+.level-7 { color: #009688; } /* Turquoise au lieu de jaune */
+.level-8 { color: #673AB7; } /* Violet au lieu de jaune */
+.level-9 { color: #FF9800; } /* Orange au lieu de violet */
+.level-master { color: #F44336; }
+
+/* Versions sombres pour le thème dark */
+.theme-dark .level-1 { color: #81C784; } /* Vert plus clair */
+.theme-dark .level-2 { color: #F48FB1; } /* Rose plus clair */
+.theme-dark .level-3 { color: #CE93D8; } /* Violet plus clair */
+.theme-dark .level-4 { color: #FFAB91; } /* Orange plus clair */
+.theme-dark .level-5 { color: #EF9A9A; } /* Rouge plus clair */
+.theme-dark .level-6 { color: #90CAF9; } /* Bleu plus clair */
+.theme-dark .level-7 { color: #80CBC4; } /* Turquoise plus clair */
+.theme-dark .level-8 { color: #B39DDB; } /* Violet plus clair */
+.theme-dark .level-9 { color: #FFCC80; } /* Orange plus clair */
+.theme-dark .level-master { color: #EF5350; } /* Rouge vif */
+
+/* Ajustements pour les fonds de même couleur */
+.color-blue .level-2,
+.color-blue .level-6 { color: #FF4081; } /* Rose vif sur fond bleu */
+
+.color-orange .level-4,
+.color-orange .level-9 { color: #2196F3; } /* Bleu sur fond orange */
+
+.color-green .level-1 { color: #9C27B0; } /* Violet sur fond vert */
+
+[class^="level-"] {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+
+.level-up {
+    animation: levelUpAnimation 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

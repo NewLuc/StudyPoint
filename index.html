@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyPoint</title>
+    <link rel="icon" href="flavicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div id="stats-display">
+            <div class="level-info">
+                <div class="level-header">
+                    <div id="points-counter">Points: 0</div>
+                    <div id="level-display">Niveau: 1</div>
+                </div>
+                <div class="level-progress">
+                    <div class="progress-bar"></div>
+                    <div class="progress-text">0/100</div>
+                </div>
+            </div>
+        </div>
+        <h1 id="app-title">StudyPoint</h1>
+        <div id="theme-menu">
+            <select id="theme-select">
+                <option value="light">☀️ Clair</option>
+                <option value="dark">🌙 Sombre</option>
+            </select>
+            <select id="color-select">
+                <option value="green">🟢 Vert</option>
+                <option value="blue">🔵 Bleu</option>
+                <option value="orange">🟠 Orange</option>
+            </select>
+        </div>
+    </header>
+    <div class="container">
+        <nav id="sidebar">
+            <button class="nav-btn" data-page="planning">Planning</button>
+            <button class="nav-btn" data-page="revisions">Révisions</button>
+            <button class="nav-btn" data-page="timer">Timer</button>
+            <button class="nav-btn" data-page="options">Options &amp; sécurité</button>
+        </nav>
+        <main id="main-content">
+            <section id="planning" class="page">
+                <h2>Planning</h2>
+                <div id="calendar-card">
+                    <div class="calendar-header">
+                        <div class="calendar-heading">
+                            <h3>Prochains événements</h3>
+                            <p id="calendar-status" class="calendar-status">Configuration du calendrier requise.</p>
+                        </div>
+                        <select id="calendar-type" style="margin-right:1rem;">
+                            <option value="ical">iCal</option>
+                            <option value="google">Google Agenda</option>
+                        </select>
+                        <button id="update-calendar-url" class="calendar-action">Modifier le lien</button>
+                    </div>
+                    <div id="calendar-events" class="calendar-events-list">
+                        <p class="calendar-placeholder">Ajoutez un lien iCal ou Google Agenda pour afficher vos événements ici.</p>
+                    </div>
+                    <div id="google-calendar-frame" style="display:none; width:100%; min-height:500px; margin-top:1rem;"></div>
+                </div>
+            </section>
+            <section id="revisions" class="page">
+                <h2>Révisions</h2>
+                <div class="add-note-wrapper">
+                    <button id="add-note" class="add-note-btn">
+                        <span class="add-icon">+</span>
+                        <span class="btn-text">Ajouter une fiche</span>
+                    </button>
+                </div>
+                <div id="notes-container"></div>
+            </section>
+            <section id="timer" class="page">
+                <h2>Timer / Chronomètre</h2>
+                <div id="timer-section">
+                    <h3>Timer Décompte</h3>
+                    <div id="preset-btns">
+                        <button data-time="5">5 min</button>
+                        <button data-time="15">15 min</button>
+                        <button data-time="25">25 min</button>
+                        <button data-time="30">30 min</button>
+                        <button data-time="60">60 min</button>
+                    </div>
+                    <div id="timer-display">00:00:00</div>
+                    <div class="controls">
+                        <button id="start-timer">Start</button>
+                        <button id="pause-timer">Pause</button>
+                        <button id="stop-timer">Stop</button>
+                    </div>
+                </div>
+                <div id="chrono-section">
+                    <h3>Chronomètre Libre</h3>
+                    <div id="chrono-display">00:00:00</div>
+                    <div class="controls">
+                        <button id="start-chrono">Start</button>
+                        <button id="pause-chrono">Pause</button>
+                        <button id="stop-chrono">Stop</button>
+                        <button id="reset-chrono">Reset</button>
+                    </div>
+                </div>
+                <div id="stats">
+                    <p>Temps total: <span id="daily-time">0</span> min</p>
+                    <p>Sessions complétées: <span id="sessions-completed">0</span></p>
+                    <p>Points gagnés: <span id="points-earned">0</span></p>
+                </div>
+            </section>
+            <section id="options" class="page">
+                <h2>Options &amp; Sécurité</h2>
+                <div class="options-grid">
+                    <article class="option-card">
+                        <h3>Synchronisation</h3>
+                        <p>Rechargez les données et vérifiez leur intégrité si quelque chose vous semble étrange.</p>
+                        <button id="refresh-data" class="calendar-action">🔄 Rafraîchir les données</button>
+                    </article>
+                    <article class="option-card">
+                        <h3>Anti-triche</h3>
+                        <p>Activez la protection contre les modifications manuelles des points et du niveau.</p>
+                        <label class="toggle">
+                            <input type="checkbox" id="anti-cheat-toggle">
+                            <span class="slider"></span>
+                            <span class="toggle-label">Surveiller les changements suspects</span>
+                        </label>
+                    </article>
+                    <article class="option-card">
+                        <h3>Google Agenda</h3>
+                        <p>Affichez votre agenda dans l&rsquo;application avec un lien iCal ou Google Agenda intégré.</p>
+                        <button id="open-google-calendar" class="calendar-action">🌐 Ouvrir l&rsquo;iframe Google Agenda</button>
+                    </article>
+                </div>
+                <div class="option-info" id="anti-cheat-status"></div>
+            </section>
+        </main>
+    </div>
+    <script src="js/antiCheat.js"></script>
+    <script src="js/levelEffects.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/notes.js"></script>
+</body>
+</html>

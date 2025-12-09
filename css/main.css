@@ -1,0 +1,17 @@
+/* Import all CSS files */
+@import 'variables.css';
+@import 'themes.css';
+@import 'animations.css';
+@import 'base.css';
+@import 'layout.css';
+@import 'header.css';
+@import 'levels.css';
+@import 'navigation.css';
+@import 'buttons.css';
+@import 'dropdowns.css';
+@import 'timer.css';
+@import 'calendar.css';
+@import 'calendar-selector.css';
+@import 'notes.css';
+@import 'options.css';
+@import 'responsive.css';
