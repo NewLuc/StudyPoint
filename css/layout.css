@@ -1,0 +1,52 @@
+/* ==========================================
+   LAYOUT STYLES
+   ========================================== */
+
+.container {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 80px);
+}
+
+#sidebar {
+    width: 280px;
+    background: var(--surface-color);
+    padding: 2rem 1rem;
+    box-shadow: var(--shadow);
+    border-right: 1px solid var(--border-color);
+    transition: var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+#main-content {
+    flex: 1;
+    padding: 2.5rem;
+    overflow-y: auto;
+    transition: var(--transition-medium);
+    background: var(--background-color);
+}
+
+.page {
+    opacity: 0;
+    transform: translateY(30px);
+    display: none;
+    transition: var(--transition-medium);
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+.page h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -1px;
+}

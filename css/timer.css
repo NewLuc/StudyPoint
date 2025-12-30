@@ -1,0 +1,183 @@
+/* ==========================================
+   TIMER & CHRONO SECTIONS
+   ========================================== */
+
+/* Timer Animations */
+@keyframes timerPulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 15px var(--primary-color);
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 25px var(--primary-color);
+    }
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 15px var(--primary-color);
+    }
+}
+
+@keyframes timerRotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Animation du carré en arrière-plan */
+#timer-display::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    border: 4px solid var(--primary-color);
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: timerRotate 8s linear infinite;
+    z-index: -1;
+    opacity: 0.2;
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+#timer-section,
+#chrono-section {
+    background: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition-fast);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    animation: scaleIn 0.6s ease;
+}
+
+#timer-display,
+#chrono-display {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem auto;
+    color: var(--primary-color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    width: 100%;
+    text-shadow: 0 0 15px var(--primary-color);
+    animation: timerPulse 2s ease-in-out infinite;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    transition: none;
+}
+
+.time-unit {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-size: inherit;
+    transition: none;
+    font-family: inherit;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    padding: 0.875rem 1.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+#preset-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+#preset-btns button {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ==========================================
+   STATISTICS SECTION
+   ========================================== */
+
+#stats {
+    background: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.6s ease;
+}
+
+#stats p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    transition: var(--transition-fast);
+}
+
+#stats p:hover {
+    transform: translateX(5px);
+    background: var(--hover-color);
+}
+
+#stats span {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    min-width: 80px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,43 @@
+/* ==========================================
+   VARIABLES CSS
+   ========================================== */
+
+:root {
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+    --primary-light: rgba(76, 175, 80, 0.1);
+    --secondary-color: #2196F3;
+    --secondary-hover: #1976D2;
+    --accent-color: #FF9800;
+    --accent-hover: #F57C00;
+    --danger-color: #F44336;
+    --danger-hover: #D32F2F;
+    --background-color: #f5f7fa;
+    --surface-color: #ffffff;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --border-color: #e0e0e0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.2);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-medium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+}
+
+/* Dark Theme */
+.theme-dark {
+    --background-color: #0f1419;
+    --surface-color: #1a1f2e;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a8b3;
+    --border-color: #2d3748;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
